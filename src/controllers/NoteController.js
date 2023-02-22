@@ -20,12 +20,36 @@ const createNote = async (req, res) => {
 
 }
 
-const updateNote = (req, res) => {
+const updateNote = async (req, res) => {
+
+    const id = req.params.id
+    const {title, description} = req.body
+
+    const newNote = {
+        title : title,
+        description : description,
+        userId : req.userId
+    }
+
+    try {
+        await noteModel.findByIdAndUpdate(id, newNote, {new : true})
+        res.status(200).json(newNote)
+    }catch (e) {
+        console.log(e);
+        res.status(500).json({message : "Something went wrong!!!"})
+    }
 
 }
 
-const deleteNote = (req, res) => {
-
+const deleteNote = async (req, res) => {
+    const id = req.params.id
+    try {
+        await noteModel.findByIdAndDelete(id)
+        res.status(200).json("Note deleted successfully!!!")
+    }catch (e) {
+        console.log(e);
+        res.status(500).json({message : "Something went wrong!!!"})
+    }
 }
 
 const getNotes = async (req, res) => {
