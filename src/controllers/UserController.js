@@ -1,4 +1,4 @@
-const userModel = require("../models/user")
+const userModel = require("../models/ModelUser")
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const SECRET_KEY = "NOTESAPI"
