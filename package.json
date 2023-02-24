@@ -2,15 +2,13 @@
   "name": "note-api",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "start": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "sulaiman",
   "license": "ISC",
-  "description": ""
-  ,
+  "description": "",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
