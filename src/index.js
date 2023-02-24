@@ -10,6 +10,7 @@ dotenv.config()
 const mongoose = require("mongoose").default
 
 app.use(express.json())
+app.use(express.urlencoded())
 app.use(cors())
 
 app.use("/users", userRouter)
