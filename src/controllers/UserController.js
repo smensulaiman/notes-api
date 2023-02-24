@@ -53,7 +53,7 @@ const signIn = async (req, res) => {
         const token = jwt.sign({
             email: existingUser.email,
             id: existingUser._id
-        }, SECRET_KEY)
+        }, process.env.SECRET_KEY)
 
         res.status(200).json({user: existingUser, token: token})
 
